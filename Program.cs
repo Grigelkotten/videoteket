@@ -5,7 +5,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Videoteket video = new();
 
         using (var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root"))
         {
