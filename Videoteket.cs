@@ -5,11 +5,11 @@ class Videoteket
 {
     private List<Movie> Movies = new();
 
-    public void MoviesFromDataBase()
+
+    public void MoviesFromDataBase(MySqlConnection connection)
     {
-        var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root");
         {
-            var movies = connection.Query<Movie>("SELECT genre AS Genre, title AS Title,id AS Id,is_old AS IsOld, release_date AS ReleaseDate FROM movies;").ToList();
+            var movies = connection.Query<Movie>("SELECT genre AS Genre,title AS Title,id AS Id,is_old AS IsOld, release_date AS ReleaseDate FROM users;").ToList();
 
             foreach (Movie movie in movies)
             {

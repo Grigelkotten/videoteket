@@ -6,7 +6,8 @@ internal class Program
     private static void Main(string[] args)
     {
         Videoteket video = new();
-        video.MoviesFromDataBase();
+
+        video.MoviesFromDataBase(Database.Connect());
         video.PrintAllMovies();
 
         // using (var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root"))

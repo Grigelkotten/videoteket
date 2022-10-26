@@ -8,13 +8,14 @@ class Movie
     public string Genre { get; set; }
     public int Price { get; set; }
     public int LoanDays { get; set; }
+
     public override string ToString()
     {
         return $"{Title} {Genre}";
     }
     public void IsMovieOld()
     {
-        if(IsOld == 0)
+        if (IsOld == 0)
         {
             Price = 29;
             LoanDays = 1;
