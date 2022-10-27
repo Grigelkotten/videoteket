@@ -18,7 +18,6 @@ class User
 
     public void AddUser(MySqlConnection connection, string firstName, string lastName, string email, string adress, int phonenumber)
     {
-        connection.Query<User>($"INSERT INTO users(f_name, l_name, email, adress, phone_number) VALUES; {firstName} {lastName} {email} {adress} {phonenumber}");
-
+        connection.Query<User>($"INSERT INTO users(f_name, l_name, email, adress, phone_number) VALUES('{firstName}', '{lastName}', '{email}', '{adress}', '{phonenumber}')");
     }
 }

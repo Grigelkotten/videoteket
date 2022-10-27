@@ -7,10 +7,19 @@ internal class Program
     {
         Videoteket video = new();
         User testUser = new();
-        testUser.AddUser(Database.Connect(), "alexander", "asplen", "något@mail.com", " salangsgatan 8", 0736644828);
+        //testUser.AddUser(Database.Connect(), "alexander", "asplen", "något@mail.com", " salangsgatan 8", 0736644828);
 
         video.MoviesFromDataBase(Database.Connect());
-        video.PrintAllMovies();
+        //video.PrintAllMovies();
+
+        Console.WriteLine("skriv in en film att söka på");
+        string searchInput = Console.ReadLine().ToLower();
+        List<Movie> movielist = video.SearchForMovies(Database.Connect(), searchInput);
+        foreach (Movie item in movielist)
+        {
+            Console.WriteLine(item.Title);
+        }
+
 
         // using (var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root"))
         // {
