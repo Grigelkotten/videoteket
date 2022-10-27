@@ -20,6 +20,9 @@ internal class Program
             Console.WriteLine(item.Title);
         }
 
+        int count = video.IsMovieAvalible(Database.Connect(), searchInput);
+        Console.WriteLine($"found number of movies {count}");
+
 
         // using (var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root"))
         // {
