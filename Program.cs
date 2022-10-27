@@ -19,8 +19,8 @@ internal class Program
         {
             Console.WriteLine(item.Title);
         }
-
-
+        int count = video.IsMovieAvalible(Database.Connect(), searchInput);
+        Console.WriteLine($"We found {count} videos for rent in the store.");
         // using (var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root"))
         // {
         //     var users = connection.Query<User>("SELECT f_name AS FirstName,l_name AS LastName,adress AS Adress FROM users;").ToList();
