@@ -12,16 +12,20 @@ internal class Program
         video.MoviesFromDataBase(Database.Connect());
         //video.PrintAllMovies();
 
-        Console.WriteLine("skriv in en film att söka på");
+        Console.WriteLine("skriv in en person att söka på");
         string searchInput = Console.ReadLine().ToLower();
-        List<Movie> movielist = video.SearchForMovies(Database.Connect(), searchInput);
-        foreach (Movie item in movielist)
-        {
-            Console.WriteLine(item.Title);
-        }
 
-        int count = video.IsMovieAvalible(Database.Connect(), searchInput);
-        Console.WriteLine($"found number of movies {count}");
+        // List<Movie> movielist = video.SearchForMovies(Database.Connect(), searchInput);
+        // foreach (Movie item in movielist)
+        // {
+        //     Console.WriteLine(item.Title);
+        // }
+
+        // int count = video.IsMovieAvalible(Database.Connect(), searchInput);
+        // Console.WriteLine($"found number of movies {count}");
+
+        string searchForPerson = testUser.DoesUserExist(Database.Connect(), searchInput);
+        Console.WriteLine($"Found user {searchForPerson}");
 
 
         // using (var connection = new MySqlConnection("Server = localhost;Database = videoteket;Uid=root"))

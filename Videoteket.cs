@@ -30,6 +30,7 @@ class Videoteket
         var movies = connection.Query<Movie>($"SELECT title FROM movies WHERE title = '{search}';").ToList();
         return movies;
     }
+
     public int IsMovieAvalible(MySqlConnection connection, string search)
     {
         int movieId = connection.QuerySingle<int>($"SELECT id FROM movies WHERE title = '{search}';");
