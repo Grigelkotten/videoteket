@@ -20,9 +20,10 @@ class User
     {
         connection.Query<User>($"INSERT INTO users(f_name, l_name, email, adress, phone_number) VALUES('{firstName}', '{lastName}', '{email}', '{adress}', '{phonenumber}')");
     }
-    public string DoesUserExist(MySqlConnection connection, string search)
+
+    public string SearchForUser(MySqlConnection connection, string search)
     {
         string checkUser = connection.QuerySingle<string>($"SELECT f_name FROM users WHERE f_name = '{search}';");
-        return search;
+        return checkUser;
     }
 }
