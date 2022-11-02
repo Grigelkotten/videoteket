@@ -33,11 +33,9 @@ class Movie
         return IsOld;
     }
     //behöver ses över.. (1)behöver ta in filmen, kolla ifall den är gammal (2) Räkna ut loandays och betämma priset därefter.
-    /*public int LateReturn(MySqlConnection connection, int barcode)
+    public int LateReturn(MySqlConnection connection, int barcode)
     {
         int returnCase = connection.QuerySingle<int>($"SELECT barcode FROM video_case WHERE barcode = '{barcode}';");
-
-        IsOld = 29;
 
         if (IsOld + LoanDays > 3)
         {
@@ -49,5 +47,5 @@ class Movie
         }
         return IsOld;
     }
-    */
+
 }

@@ -33,7 +33,7 @@ internal class Program
         //video.PrintAllMovies();
 
         //gjorde en loop för att testa att meetoden SearchForUser fungerade
-
+        while (true)
         {
             try
             {
